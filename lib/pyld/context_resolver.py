@@ -113,7 +113,7 @@ class ContextResolver:
 
         # resolve, cache, and return context
         resolved = self.resolve(active_ctx, context, base, cycles)
-        self._cache_resolved_context(url, resolved, remote_doc.get('tag'))
+        self._cache_resolved_context(url, resolved, remote_doc.get('tag', 'static'))
         return resolved
 
     def _fetch_context(self, active_ctx, url, cycles):
